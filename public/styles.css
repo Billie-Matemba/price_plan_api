@@ -1,0 +1,87 @@
+/**.pizza {
+    border: 1px solid;
+    margin-bottom: 1em;
+    padding: 1em;
+}**/
+/** centre a div**/
+
+.centered {
+    width: 300px; 
+    margin: 0 auto; /* Center horizontally */
+    /* background-color: lightgray; */
+}
+
+
+body{
+    background-color:#FFD6FF ; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+
+ .butt {
+    display: inline-flex;
+    gap: 1em;
+ }
+
+/*table*/
+
+table {
+    border-collapse: collapse; 
+    border: 1px  solid #B8C0FF;
+    width: 70%;
+}
+table th, table td {
+    border: 1px  solid #B8C0FF; 
+    padding: 8px; 
+}
+
+button {
+    border-radius: 5px;
+    color: black;
+    background-color: #C8B6FF;
+    /* height: 100%; */
+ }
+
+ .phone{
+     border:1px solid #B8C0FF;
+     padding: 1em;
+     margin: 1em;
+     border-radius: 0.5em;
+     background-color: #BBD0FF;
+     /* flex: 1 1 calc(25% ); */
+    
+ }
+ 
+
+ .txt {
+    display: flex;
+    
+    gap: 5px;
+    /**float: right;**/
+ }
+ .medium{
+     background-color: #E7C6FF;
+ }
+ 
+ .large_pizza{
+     background-color: #C8B6FF;
+ }
+ 
+ .small_pizza{
+     background-color: #B8C0FF;
+ }
+ .contact{
+     background-color: #BBD0FF;
+ }
+ @media (min-width: 960px) {
+     /* .pizzas {
+         display:flex;
+     } */
+     .pizza-container{
+        display: flex;
+        flex-wrap: wrap;
+       
+     }
+     
+ }
+
+ [x-cloak] { display: none !important; }

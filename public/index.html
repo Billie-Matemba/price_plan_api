@@ -14,7 +14,7 @@
 <body>
     <div x-data="pricePlan" x-init="fetchPlan()">
         <h2>Price Plan Table</h2>
-        <button @click="showPricePlan = !showPricePlan">
+        <button @click=togglePricePlan>
             <span x-text="showPricePlan ? 'Hide Table' : 'Show Table'"></span>
         </button>
         <table x-show="showPricePlan">

@@ -12,6 +12,7 @@ document.addEventListener('alpine:init', () => {
         existingPlan: '',
         newCallCost: 0,
         newSmsCost: 0,
+        showPricePlan: false,
 
         fetchPlan() {
             axios.get('http://localhost:4011/api/price_plans')
@@ -24,9 +25,9 @@ document.addEventListener('alpine:init', () => {
                 });
         },
 
-        showPricePlan() {
-            console.log(this.plans);
-            
+        togglePricePlan() {
+            this.showPricePlan = !this.showPricePlan;
+            console.log(this.showPricePlan ? "Table is shown" : "Table is hidden");
         },
 
         calculateTotal() {

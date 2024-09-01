@@ -44,6 +44,9 @@ document.addEventListener('alpine:init', () => {
                     this.total = '';
                 }, 3000);
             })
+            .catch(error => {
+                console.error('Error calculating total:', error);
+            });  
         },
 
         createPricePlan () {
@@ -53,10 +56,15 @@ document.addEventListener('alpine:init', () => {
                 "call_cost": this.callCost
             })
             .then(response =>{
+                this.plans = response.data;
                 this.newPlan = '';
                 this.smsCost = '';
                 this.callCost = '';
             })
+
+            .catch(error => {
+                console.error('Error creating price plan:', error);
+            });
         },
         updatePricePlan () {
             return axios.post('http://localhost:4011/api/price_plan/update', {
@@ -65,15 +73,20 @@ document.addEventListener('alpine:init', () => {
                 "call_cost": this.newCallCost
             })
             .then(response =>{
+                this.plans = response.data;
                 this.message = 'Price Plan updated sucessfully!';
-                this.newPlan = '';
-                this.smsCost = '';
-                this.callCost = '';
+                this.existingPlan = '';
+                this.newSmsCostmsCost = '';
+                this.newCallCost = '';
 
                 setTimeout(() => {
                     this.message = '';
                 }, 3000);
             })
+            .catch(error => {
+                console.error('Error updating price plan:', error);
+                this.message = 'Failed to update price plan.';
+            });
 
             
         },
@@ -83,8 +96,12 @@ document.addEventListener('alpine:init', () => {
                 "id": this.idNum
             })
             .then(response => {
+                this.plans = response.data;
                 this.idNum = '';
             })
+            .catch(error => {
+                console.error('Error deleting price plan:', error);
+            });
         }
 
     }))
